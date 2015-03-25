@@ -37,3 +37,5 @@ The `28 watch` command will deploy your queries to 28.io everytime they are upda
 $cd queries/
 $28 watch my-project
 ```
+
+For continuous integration, there is a gulp task to perform static code analysis on your queries: [gulp-xqlint](https://github.com/wcandillon/gulp-xqlint). And example of integration between 28.io and gulp is available [here](https://github.com/28msec/cellstore/blob/master/tasks/28.js).
