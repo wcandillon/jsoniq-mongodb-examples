@@ -7,5 +7,6 @@ let $count := count($answer)
 order by $count descending
 return {
   name  : $user,
-  count : $count
+  count : $count,
+  title: collection("faq")[$$.question_id eq $answer[1].question_id].title
 }
