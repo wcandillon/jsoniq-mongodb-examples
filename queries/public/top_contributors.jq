@@ -1,12 +1,18 @@
 (:
  : Users who answered the most questions.
  :)
-for $answer in collection("answers")
-group by $user := $answer.owner.display_name
-let $count := count($answer)
-order by $count descending
+for $answers in collection("answers")
+group by $user-id := $answers.owner.user_id
+let $count := count($answers)
+let $avg-score := avg($answers.score)
+order by $avg-score, $count descending
+let $titles := for $answer in $answers
+               for $question in collection("faq")
+               where $answer.question_id eq $question.question_id
+               return $question.title
 return {
-  name  : $user,
-  count : $count,
-  title: collection("faq")[$$.question_id eq $answer[1].question_id].title
+  name: $answers[1].owner.display_name,
+  reputation: $avg-score,
+  count: $count,
+  titles: [distinct-values($titles)]
 }
