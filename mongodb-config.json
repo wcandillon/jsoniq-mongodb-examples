@@ -1,0 +1,12 @@
+[{
+    "category": "MongoDB",
+    "name": "stackoverflow",
+    "default": true,
+    "credentials": {
+        "conn-string": "linus.mongohq.com:10059",
+        "db": "stackoverflow",
+        "user": "demo",
+        "pass": "63f02d0ba0f1786c66d4667f05f4bcfe",
+        "pre-digested": true
+    }
+}]
