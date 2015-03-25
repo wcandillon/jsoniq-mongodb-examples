@@ -1,2 +1,1 @@
-# jsoniq-mongodb-examples
-JSONiq Query Examples for MongoDB
+#JSONiq Query Examples for MongoDB
