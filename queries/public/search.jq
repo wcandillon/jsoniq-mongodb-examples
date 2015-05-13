@@ -2,7 +2,7 @@
  : Questions whose title contains the terms "nosql" and "database"
  : and which are tagged with "mongodb".
  :)
-for $faq in collection("faqs")
+for $faq in collection("faq")
 let $title := $faq.title,
     $lc-title := lower-case($title)
 where contains($lc-title, "nosql") and
