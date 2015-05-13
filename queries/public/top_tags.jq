@@ -1,7 +1,7 @@
 (:
  : Most used tags.
  :)
-for $tag in collection("faqs").tags()
+for $tag in collection("faq").tags()
 group by $tag
 count $count
 order by $count descending
